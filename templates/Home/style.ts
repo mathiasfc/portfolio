@@ -23,16 +23,16 @@ export const Main = styled.main`
   max-width: 1280px;
   margin-right: auto;
   margin-left: auto;
-  border: 2px solid green;
-  z-index: 2;
   width: 100%;
+
+  z-index: 2;
 `;
 
 export const UniverseGlowEffect = styled.img`
   top: 50%;
   left: 50%;
   width: 200%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleX(-1);
   pointer-events: none;
   overflow: hidden;
   position: absolute;

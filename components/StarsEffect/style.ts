@@ -32,7 +32,6 @@ export const StarsEffectContainer = styled.div`
   background-color: #040d21;
 
   > div:nth-child(1) {
-    border: 1px solid green;
     background-position: 10% 90%;
     animation-delay: 0s;
   }
