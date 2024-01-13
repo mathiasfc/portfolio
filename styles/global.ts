@@ -1,9 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    color: white;
+    color: ${theme.colors.text};
     padding: 0;
     margin: 0;
     /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
