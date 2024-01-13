@@ -7,7 +7,11 @@ const Header = () => {
     <s.HeaderContainer>
       <s.HeaderInnerContainer>
         <s.HeaderContent>
-          <s.OctoCatLink href="https://github.com/" aria-label="Homepage">
+          <s.OctoCatLink
+            href="https://github.com/mathiasfc/portfolio"
+            aria-label="GitHub repository"
+            title="GitHub repository"
+          >
             <OctoCatIcon />
           </s.OctoCatLink>
         </s.HeaderContent>
