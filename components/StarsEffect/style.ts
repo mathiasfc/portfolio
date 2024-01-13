@@ -13,7 +13,25 @@ const zoomAnimation = keyframes`
   }
 
   100% {
-    opacity: .2;
+    opacity: 0;
+    transform: scale(2.2);
+  }
+`;
+
+const planetZoomAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    transform: rotate(5deg);
+    animation-timing-function: ease-out;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .1;
     transform: scale(2.2);
   }
 `;
@@ -29,6 +47,7 @@ const commonStyle = css`
 
 export const StarsEffectContainer = styled.div`
   ${commonStyle}
+  z-index: -1;
   background-color: #040d21;
 
   > div:nth-child(1) {
@@ -71,7 +90,7 @@ export const StarsEffectContainer = styled.div`
   }
 `;
 
-export const ShootingStars = styled.div`
+export const MovingStars = styled.div`
   ${commonStyle}
   background-image: radial-gradient(
       2px 2px at 50px 200px,
@@ -84,4 +103,33 @@ export const ShootingStars = styled.div`
   background-size: 250px 250px;
   opacity: 0;
   animation: ${zoomAnimation} 10s infinite;
+`;
+
+type SmallPlanetProps = {
+  readonly $randomPosition: string;
+  readonly $randomColor: string;
+};
+
+export const SmallPlanet = styled.div<SmallPlanetProps>`
+  ${commonStyle}
+
+  ${({ $randomPosition, $randomColor }) => css`
+    background-image: radial-gradient(
+        30px 0.5px at ${$randomPosition} ${$randomPosition},
+        ${$randomColor},
+        rgba(0, 0, 0, 0)
+      ),
+      radial-gradient(
+        4px 4px at ${$randomPosition} ${$randomPosition},
+        ${$randomColor},
+        rgba(0, 0, 0, 0)
+      );
+
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    background-position: 50% 20%;
+    animation-delay: 10s;
+    opacity: 0;
+    animation: ${planetZoomAnimation} 10s infinite;
+  `}
 `;
