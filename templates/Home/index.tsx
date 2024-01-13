@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import StarsEffect from "@/components/StarsEffect";
 import CodeContent from "@/components/CodeContent";
+import Footer from "@/components/Footer";
 import * as s from "./style";
 
 const HomeTemplate = () => {
@@ -20,6 +21,8 @@ const HomeTemplate = () => {
 
         <s.UniverseGlowEffect src="/glow.svg" />
       </s.Main>
+
+      <Footer />
     </s.HomeTemplateContainer>
   );
 };

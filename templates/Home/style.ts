@@ -13,7 +13,7 @@ export const HomeTemplateContainer = styled.div`
 `;
 
 export const Main = styled.main`
-  padding: 5rem 0;
+  padding: 5rem 0rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -24,8 +24,6 @@ export const Main = styled.main`
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-
-  z-index: 2;
 `;
 
 export const UniverseGlowEffect = styled.img`
@@ -37,4 +35,5 @@ export const UniverseGlowEffect = styled.img`
   overflow: hidden;
   position: absolute;
   border-style: none;
+  z-index: -1;
 `;
