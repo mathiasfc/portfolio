@@ -1,9 +1,15 @@
+import { breakpoints } from "@/utils/breakpoints";
 import styled, { keyframes } from "styled-components";
 
 export const TypingAnimationContainer = styled.div`
   span {
     white-space: pre-line;
     font-size: 1rem;
+
+    @media (max-width: ${breakpoints.sm}) {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+    }
   }
 `;
 

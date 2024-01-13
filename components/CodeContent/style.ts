@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { breakpoints } from "@/utils/breakpoints";
+import styled, { css } from "styled-components";
 
 export const CodeContentContainer = styled.div`
   border: 1px solid #202637;
@@ -12,4 +13,49 @@ export const CodeContentContainer = styled.div`
   width: 100%;
   line-height: 2rem;
   min-width: 320px;
+
+  @media (max-width: ${breakpoints.sm}) {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+`;
+
+export const CodeBlock = styled.div`
+  ${({ theme }) => css`
+    margin-top: 1rem;
+    cursor: pointer;
+
+    p {
+      margin: 0px;
+    }
+
+    .span-code-blue {
+      color: ${theme.colors.blue};
+    }
+
+    .span-code-orange {
+      color: ${theme.colors.orange};
+    }
+
+    .span-code-purple {
+      color: ${theme.colors.purple};
+    }
+
+    .span-code-green {
+      color: ${theme.colors.green};
+
+      &:hover {
+        color: ${theme.colors.black};
+        background-color: ${theme.colors.green};
+      }
+    }
+
+    .span-code-yellow {
+      color: ${theme.colors.yellow};
+    }
+
+    .span-code-pink {
+      color: ${theme.colors.pink};
+    }
+  `}
 `;
