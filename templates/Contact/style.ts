@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HomeTemplateContainer = styled.div`
+export const ContactTemplateContainer = styled.div`
   padding: 0 0.5rem;
   display: flex;
   flex-flow: column nowrap;
@@ -13,7 +13,7 @@ export const HomeTemplateContainer = styled.div`
 `;
 
 export const Main = styled.main`
-  padding: 1rem;
+  padding: 5rem 0rem;
   flex: 1;
   display: flex;
   flex-direction: column;
