@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components";
 export const TypingAnimationContainer = styled.div`
   span {
     white-space: pre-line;
+    opacity: 0.8;
     font-size: 1rem;
 
     @media (max-width: ${breakpoints.sm}) {

@@ -1,18 +1,14 @@
 import { breakpoints } from "@/utils/breakpoints";
 import styled, { css } from "styled-components";
 
-export const CodeContentContainer = styled.div`
-  border: 1px solid #202637;
-  background-color: #0c162d;
-  padding: 1.5rem;
+export const CommandTerminalContainer = styled.div`
   margin: 1.5rem;
-  border-radius: 0.375rem;
   word-wrap: break-word;
-  max-width: 654px;
-  min-height: 82px;
   width: 100%;
   line-height: 2rem;
+
   min-width: 320px;
+  max-width: 654px;
 
   @media (max-width: ${breakpoints.sm}) {
     font-size: 0.9rem;
@@ -20,10 +16,49 @@ export const CodeContentContainer = styled.div`
   }
 `;
 
+export const CommandTerminalHeader = styled.header`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 0.575rem;
+    border-top-right-radius: 0.575rem;
+    background: #14141499;
+    height: 45px;
+    text-align: center;
+    color: ${theme.colors.white};
+
+    span {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    a {
+      color: ${theme.colors.white};
+      text-decoration: none;
+    }
+  `}
+`;
+
+export const CommandTerminalBody = styled.div`
+  background-color: #0c162d;
+  padding: 1.5rem;
+  border-bottom-left-radius: 0.575rem;
+  border-bottom-right-radius: 0.575rem;
+  min-height: 82px;
+`;
+
 export const CodeBlock = styled.div`
   ${({ theme }) => css`
+    width: auto;
     margin-top: 1rem;
-    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      display: inline-block;
+    }
 
     p {
       margin: 0px;
