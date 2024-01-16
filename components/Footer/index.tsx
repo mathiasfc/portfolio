@@ -1,6 +1,6 @@
 import React from "react";
+import OctoCatIcon from "@/components/icons/Octocat";
 import * as s from "./style";
-import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -13,9 +13,13 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <Link className="a-blue" href="/about">
-              [about]
-            </Link>
+            <a
+              className="a-blue"
+              href="https://vemadotar.com.br/sorte"
+              target="_blank"
+            >
+              [feeling-lucky]
+            </a>
           </li>
           <li>
             <a
@@ -30,9 +34,15 @@ const Footer = () => {
       </s.FooterNavigation>
 
       <s.FooterCopyRight>
-        <span>
-          {new Date().getFullYear()}, built with <s.HeartEmoji>❤️</s.HeartEmoji>
-        </span>
+        <s.OctoCatLink
+          href="https://github.com/mathiasfc/portfolio"
+          aria-label="GitHub repository"
+          title="GitHub repository"
+        >
+          <OctoCatIcon />
+        </s.OctoCatLink>
+        <span>{new Date().getFullYear()}, built with</span>
+        <s.HeartEmoji>❤️</s.HeartEmoji>
       </s.FooterCopyRight>
     </s.FooterContainer>
   );
