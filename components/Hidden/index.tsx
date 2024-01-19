@@ -15,6 +15,10 @@ type HiddenProps = {
   xlDown?: boolean;
 };
 
+/**
+ * The `Hidden` component allows you to conditionally hide content based on breakpoints.
+ * It supports various responsive options for showing or hiding content at different screen sizes.
+ */
 const Hidden = ({
   children,
   alignCenter = false,
