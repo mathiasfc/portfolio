@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import * as s from "./style";
 
 type HiddenProps = {
-  children: any;
+  children: ReactNode;
   alignCenter?: boolean;
   xsUp?: boolean;
   smUp?: boolean;

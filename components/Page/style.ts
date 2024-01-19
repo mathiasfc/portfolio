@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SocialTemplateContainer = styled.div`
+export const PageContainer = styled.div`
   padding: 0 0.5rem;
   display: flex;
   flex-flow: column nowrap;
