@@ -71,6 +71,7 @@ const redirectLinks = css`
 const GlobalStyle = createGlobalStyle`
   html,
   body {
+    height: 100vh;
     color: ${theme.colors.text};
     padding: 0;
     margin: 0;
