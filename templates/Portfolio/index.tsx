@@ -15,7 +15,7 @@ const PortfolioTemplate = () => {
         desktopText={`// Here, you'll discover some of my latest works`}
       >
         <s.PortfolioPageContainer>
-          <p>🚧 Oops! Sadly this page isn't ready just yet.</p>
+          <p>🚧 Oops! Sadly this page isn't ready yet.</p>
           <p>I'm actively working on it to bring you something awesome!</p>
           <p>
             In the meantime, you can still access the old version{" "}
