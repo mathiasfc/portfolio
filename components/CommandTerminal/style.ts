@@ -45,7 +45,11 @@ export const CommandTerminalBody = styled.div`
   padding: 1.5rem;
   border-bottom-left-radius: 0.575rem;
   border-bottom-right-radius: 0.575rem;
-  min-height: 82px;
+  min-height: 288px;
+
+  @media (min-width: ${breakpoints.lg}) {
+    min-height: 448px;
+  }
 `;
 
 export const CodeBlock = styled.div`
@@ -78,6 +82,8 @@ export const CodeBlock = styled.div`
 
     .span-code-green {
       color: ${theme.colors.green};
+      transition: color 0.3s, background-color 0.3s;
+      border-radius: 0.2rem;
 
       &:hover {
         color: ${theme.colors.black};

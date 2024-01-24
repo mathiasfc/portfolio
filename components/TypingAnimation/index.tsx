@@ -23,7 +23,14 @@ const TypingAnimation = ({ text, speed = 50 }: TypingAnimationProps) => {
       }
     };
 
-    typeText();
+    let timeoutId = setTimeout(() => {
+      typeText();
+    }, 2000);
+
+    return () => {
+      // Clean up the timeout when the component unmounts
+      clearTimeout(timeoutId);
+    };
   }, [text, speed]);
 
   return (

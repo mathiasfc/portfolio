@@ -26,7 +26,7 @@ const CommandTerminal = ({
   mobileText,
   desktopText,
   functions,
-  delayToShowFunctions = 3800,
+  delayToShowFunctions = 5800,
 }: CommandTerminalProps) => {
   const [showRedirectFunctions, setShowRedirectFunctions] = useState(false);
 

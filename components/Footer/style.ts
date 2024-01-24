@@ -42,7 +42,7 @@ export const FooterCopyRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 170px;
+  width: 180px;
 
   @media (max-width: ${breakpoints.sm}) {
     width: 160px;
@@ -63,5 +63,6 @@ export const OctoCatLink = styled.a`
 
 export const HeartEmoji = styled.span`
   color: #4654a3;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  margin-top: -5px;
 `;
