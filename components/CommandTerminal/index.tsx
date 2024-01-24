@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import Link from "next/link";
 import Hidden from "@/components/Hidden";
 import TypingAnimation from "@/components/TypingAnimation";
@@ -6,14 +6,16 @@ import templatesFunction, {
   FunctionTemplateEnum,
 } from "@/components/CommandTerminal/TemplatesFunction";
 import routes from "@/utils/routes";
+import { buildRedirectFunctionAriaLabelText } from "@/utils/helpers";
 import * as s from "./style";
 
 type CommandTerminalProps = {
   pageTitle?: string;
   mobileText: string;
   desktopText?: string;
-  functions?: FunctionTemplateEnum[];
-  delayToShowFunctions?: number;
+  redirectFunctions?: FunctionTemplateEnum[];
+  delayToShowContent?: number;
+  children?: ReactNode;
 };
 
 enum SizesEnum {
@@ -25,72 +27,41 @@ const CommandTerminal = ({
   pageTitle = "portfolio",
   mobileText,
   desktopText,
-  functions,
-  delayToShowFunctions = 5800,
+  redirectFunctions,
+  delayToShowContent = 5800,
+  children,
 }: CommandTerminalProps) => {
-  const [showRedirectFunctions, setShowRedirectFunctions] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    if (!!functions?.length) {
-      setTimeout(() => {
-        setShowRedirectFunctions(true);
-      }, delayToShowFunctions);
-    }
+    setTimeout(() => {
+      setShowContent(true);
+    }, delayToShowContent);
   }, []);
 
   const showRedirectFunctionsCondition =
-    showRedirectFunctions && functions?.length;
-
-  const buildAriaLabelText = (func: FunctionTemplateEnum) => {
-    let ariaLabelText = "Click here to be redirected to ";
-
-    if (func === FunctionTemplateEnum.PORTFOLIO) {
-      ariaLabelText += "my latest works page";
-    }
-
-    if (func === FunctionTemplateEnum.CONTACT_ME) {
-      ariaLabelText += "contact page";
-    }
-
-    if (func === FunctionTemplateEnum.SOCIAL_NETWORKS) {
-      ariaLabelText += "my social networks page";
-    }
-
-    return ariaLabelText;
-  };
+    showContent && redirectFunctions?.length;
 
   const redirectFunctionContent = (size: SizesEnum) => {
-    let animatedText = mobileText;
-
-    if (size === SizesEnum.DESKTOP && desktopText) {
-      animatedText = desktopText;
-    }
-
     return (
       <>
-        <TypingAnimation text={animatedText} />
-
-        {showRedirectFunctionsCondition && (
-          <>
-            {functions.map((func, index) => (
-              <s.CodeBlock key={index}>
-                <Link
-                  href={routes[func]}
-                  aria-role="button"
-                  title={buildAriaLabelText(func)}
-                  aria-label={buildAriaLabelText(func)}
-                >
-                  {func === FunctionTemplateEnum.PORTFOLIO &&
-                    templatesFunction.portfolio[size]}
-                  {func === FunctionTemplateEnum.CONTACT_ME &&
-                    templatesFunction.contactMe[size]}
-                  {func === FunctionTemplateEnum.SOCIAL_NETWORKS &&
-                    templatesFunction.socialNetworks[size]}
-                </Link>
-              </s.CodeBlock>
-            ))}
-          </>
-        )}
+        {redirectFunctions?.map((func, index) => (
+          <s.CodeBlock key={index}>
+            <Link
+              href={routes[func]}
+              aria-role="button"
+              title={buildRedirectFunctionAriaLabelText(func)}
+              aria-label={buildRedirectFunctionAriaLabelText(func)}
+            >
+              {func === FunctionTemplateEnum.PORTFOLIO &&
+                templatesFunction.portfolio[size]}
+              {func === FunctionTemplateEnum.CONTACT_ME &&
+                templatesFunction.contactMe[size]}
+              {func === FunctionTemplateEnum.SOCIAL_NETWORKS &&
+                templatesFunction.socialNetworks[size]}
+            </Link>
+          </s.CodeBlock>
+        ))}
       </>
     );
   };
@@ -109,13 +80,29 @@ const CommandTerminal = ({
       </s.CommandTerminalHeader>
 
       <s.CommandTerminalBody>
-        {[SizesEnum.DESKTOP, SizesEnum.MOBILE].map((size) => {
+        {[SizesEnum.DESKTOP, SizesEnum.MOBILE].map((size, index) => {
           if (size === SizesEnum.DESKTOP) {
-            return <Hidden xlDown>{redirectFunctionContent(size)}</Hidden>;
+            return (
+              <Hidden xlDown key={index}>
+                <TypingAnimation text={desktopText || mobileText} />
+
+                {showRedirectFunctionsCondition &&
+                  redirectFunctionContent(size)}
+              </Hidden>
+            );
           } else if (size === SizesEnum.MOBILE) {
-            return <Hidden xlUp>{redirectFunctionContent(size)}</Hidden>;
+            return (
+              <Hidden xlUp key={index}>
+                <TypingAnimation text={mobileText} />
+
+                {showRedirectFunctionsCondition &&
+                  redirectFunctionContent(size)}
+              </Hidden>
+            );
           }
         })}
+
+        {showContent && children}
       </s.CommandTerminalBody>
     </s.CommandTerminalContainer>
   );

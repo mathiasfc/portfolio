@@ -13,7 +13,7 @@ const HomeTemplate = () => {
         pageTitle="home"
         mobileText={`// Hi there! I'm Mathias, \n // building the web \n // one line at a time`}
         desktopText={`// Hi there! I'm Mathias, \n // building the web one line at a time`}
-        functions={[
+        redirectFunctions={[
           FunctionTemplateEnum.PORTFOLIO,
           FunctionTemplateEnum.CONTACT_ME,
           FunctionTemplateEnum.SOCIAL_NETWORKS,

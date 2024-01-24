@@ -9,14 +9,14 @@ export interface OgImage {
 }
 
 interface Props {
-  title?: Maybe<string>;
-  description?: Maybe<string>;
-  keywords?: string[];
+  title: string;
+  description: string;
+  keywords: string[];
   favicon?: string;
   robots?: string;
   openGraph?: {
-    title?: Maybe<string>;
-    description?: Maybe<string>;
+    title: string;
+    description: string;
     type?: string;
     locale?: string;
     site_name?: string;
@@ -79,7 +79,11 @@ const SEO: FC<Props> = ({
 
       <link rel="shortcut icon" type="image/x-icon" href={favicon} />
 
-      <link rel="apple-touch-icon" sizes="180x180" href={favicon} />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href={"/favicon/apple-touch-icon.png"}
+      />
 
       <title key="title">{title}</title>
 

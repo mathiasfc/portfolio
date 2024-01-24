@@ -36,7 +36,7 @@ const Page = ({ title, description, children }: PageProps) => {
         title={title}
         description={description}
         keywords={constants.SEO.keywords}
-        favicon="/favicon.ico"
+        favicon="/favicon/favicon.ico"
         openGraph={{
           type: "website",
           title: title,
