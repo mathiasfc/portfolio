@@ -18,11 +18,20 @@ type CommandTerminalProps = {
   children?: ReactNode;
 };
 
+/**
+ * Enum representing possible sizes for the CommandTerminal component.
+ * @enum {string}
+ */
 enum SizesEnum {
   DESKTOP = "desktop",
   MOBILE = "mobile",
 }
 
+/**
+ * CommandTerminal component that emulates a command-line interface.
+ * @param {CommandTerminalProps} props - The properties of the CommandTerminal component.
+ * @returns {ReactNode} The rendered CommandTerminal component.
+ */
 const CommandTerminal = ({
   pageTitle = "portfolio",
   mobileText,
@@ -34,14 +43,23 @@ const CommandTerminal = ({
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    /**
+     * Sets a timeout to show the content after a specified delay.
+     */
+    const showContentTimeout = setTimeout(() => {
       setShowContent(true);
     }, delayToShowContent);
-  }, []);
+
+    // Cleanup the timeout on component unmount
+    return () => clearTimeout(showContentTimeout);
+  }, [delayToShowContent]);
 
   const showRedirectFunctionsCondition =
     showContent && redirectFunctions?.length;
 
+  /**
+   * Generates content for redirect functions based on size.
+   */
   const redirectFunctionContent = (size: SizesEnum) => {
     return (
       <>
@@ -76,6 +94,15 @@ const CommandTerminal = ({
         <span>
           {new Date().toLocaleString("default", { month: "short" }) +
             new Date().getDate()}{" "}
+          {showContent ? (
+            <span role="img" aria-label="Green Circle">
+              🟢
+            </span>
+          ) : (
+            <span role="img" aria-label="Yellow Circle">
+              🟡
+            </span>
+          )}
         </span>
       </s.CommandTerminalHeader>
 
