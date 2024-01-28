@@ -2,6 +2,8 @@ import { breakpoints } from "@/utils/breakpoints";
 import styled, { keyframes } from "styled-components";
 
 export const TypingAnimationContainer = styled.div`
+  position: relative;
+
   span {
     white-space: pre-line;
     opacity: 0.8;

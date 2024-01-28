@@ -14,14 +14,14 @@ const PortfolioTemplate = () => {
         mobileText={`// Here, you'll discover \n // some of my latest works`}
         desktopText={`// Here, you'll discover some of my latest works`}
       >
-        <s.PortfolioPageContainer>
+        <s.InnerPortfolioPageContent>
           <p>🚧 Oops! Sadly this page isn't ready yet.</p>
           <p>I'm actively working on it to bring you something awesome!</p>
           <p>
             In the meantime, you can still access the old version{" "}
             <a href="https://old.mathiasfc.dev/projetos">here</a>.
           </p>
-        </s.PortfolioPageContainer>
+        </s.InnerPortfolioPageContent>
       </CommandTerminal>
     </Page>
   );

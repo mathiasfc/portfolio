@@ -45,7 +45,9 @@ export const CommandTerminalBody = styled.div`
   padding: 1.5rem;
   border-bottom-left-radius: 0.575rem;
   border-bottom-right-radius: 0.575rem;
-  min-height: 288px;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
 
   @media (min-width: ${breakpoints.lg}) {
     min-height: 448px;
