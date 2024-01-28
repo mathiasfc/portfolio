@@ -57,6 +57,8 @@ export const OctoCatLink = styled.a`
 
   svg {
     fill: #fff;
+    height: 20px;
+    width: 20px;
     display: inline-block;
   }
 `;

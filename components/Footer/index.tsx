@@ -1,5 +1,5 @@
 import React from "react";
-import OctoCatIcon from "@/components/icons/Octocat";
+import OctoCatIcon from "@/components/icons/SocialNetworks/OctoCat";
 import * as s from "./style";
 
 const Footer = () => {
