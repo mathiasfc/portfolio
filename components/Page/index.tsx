@@ -4,7 +4,7 @@ import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import StarsEffect from "@/components/StarsEffect";
 import Footer from "@/components/Footer";
-import { constants } from "@/utils/constants";
+import { SEO_DATA } from "@/utils/constants";
 import * as s from "./style";
 
 type PageProps = {
@@ -35,7 +35,7 @@ const Page = ({ title, description, children }: PageProps) => {
       <SEO
         title={title}
         description={description}
-        keywords={constants.SEO.keywords}
+        keywords={SEO_DATA.keywords}
         favicon="/favicon/favicon.ico"
         openGraph={{
           type: "website",
