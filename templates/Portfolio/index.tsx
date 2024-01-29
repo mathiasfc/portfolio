@@ -2,6 +2,10 @@ import Page from "@/components/Page";
 import CommandTerminal from "@/components/CommandTerminal";
 import * as s from "./style";
 
+/**
+ * This page is currently unused and will not be displayed.
+ * It will remain inactive until the development of the portfolio page.
+ */
 const PortfolioTemplate = () => {
   const pageTitle = "Portfolio | Mathias Falci";
   const pageDescription =

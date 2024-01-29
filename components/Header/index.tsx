@@ -23,16 +23,16 @@ const Header = () => {
         <ul>
           <li>
             <Link
-              className={headerClassNameBuilder("a-orange", routes.portfolio)}
-              href="/portfolio"
+              className={headerClassNameBuilder("a-orange", routes.home)}
+              href={routes.home}
             >
-              [portfolio]
+              [home]
             </Link>
           </li>
           <li>
             <Link
               className={headerClassNameBuilder("a-blue", routes.contactMe)}
-              href="/contact"
+              href={routes.contactMe}
             >
               [contact-me]
             </Link>
@@ -43,7 +43,7 @@ const Header = () => {
                 "a-purple",
                 routes.socialNetworks
               )}
-              href="/social"
+              href={routes.socialNetworks}
             >
               [social]
             </Link>

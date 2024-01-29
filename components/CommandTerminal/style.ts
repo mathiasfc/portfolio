@@ -50,7 +50,8 @@ export const CommandTerminalBody = styled.div`
   overflow-y: scroll;
 
   @media (min-width: ${breakpoints.lg}) {
-    min-height: 448px;
+    min-height: 380px;
+    overflow: hidden;
   }
 `;
 

@@ -33,7 +33,7 @@ enum SizesEnum {
  * @returns {ReactNode} The rendered CommandTerminal component.
  */
 const CommandTerminal = ({
-  pageTitle = "portfolio",
+  pageTitle = "home",
   mobileText,
   desktopText,
   redirectFunctions,

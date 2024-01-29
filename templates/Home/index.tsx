@@ -14,7 +14,6 @@ const HomeTemplate = () => {
         mobileText={`// Hi there! I'm Mathias, \n // building the web \n // one line at a time`}
         desktopText={`// Hi there! I'm Mathias, \n // building the web one line at a time`}
         redirectFunctions={[
-          FunctionTemplateEnum.PORTFOLIO,
           FunctionTemplateEnum.CONTACT_ME,
           FunctionTemplateEnum.SOCIAL_NETWORKS,
         ]}
