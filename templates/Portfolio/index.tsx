@@ -3,6 +3,7 @@ import CommandTerminal from "@/components/CommandTerminal";
 import * as s from "./style";
 
 /**
+ * @deprecated
  * This page is currently unused and will not be displayed.
  * It will remain inactive until the development of the portfolio page.
  */

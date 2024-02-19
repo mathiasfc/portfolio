@@ -1,5 +1,7 @@
 import Page from "@/components/Page";
 import CommandTerminal from "@/components/CommandTerminal";
+import ContactMeForm from "@/components/ContactMeForm";
+import * as s from "./style";
 
 const ContactTemplate = () => {
   const pageTitle = "Contact | Mathias Falci";
@@ -11,7 +13,11 @@ const ContactTemplate = () => {
       <CommandTerminal
         pageTitle="contact"
         mobileText={`// Drop me a message below, \n // and let's start a conversation`}
-      />
+      >
+        <s.InnerContactPageContent>
+          <ContactMeForm />
+        </s.InnerContactPageContent>
+      </CommandTerminal>
     </Page>
   );
 };
