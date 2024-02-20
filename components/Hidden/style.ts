@@ -56,45 +56,55 @@ const xlUpStyle = css`
 `;
 
 type HiddenContainerProps = {
-  readonly alignCenter?: boolean;
-  readonly xsUp?: boolean;
-  readonly smDown?: boolean;
-  readonly smUp?: boolean;
-  readonly mdDown?: boolean;
-  readonly mdUp?: boolean;
-  readonly lgUp?: boolean;
-  readonly lgDown?: boolean;
-  readonly xlUp?: boolean;
-  readonly xlDown?: boolean;
+  readonly $alignCenter?: boolean;
+  readonly $xsUp?: boolean;
+  readonly $smDown?: boolean;
+  readonly $smUp?: boolean;
+  readonly $mdDown?: boolean;
+  readonly $mdUp?: boolean;
+  readonly $lgUp?: boolean;
+  readonly $lgDown?: boolean;
+  readonly $xlUp?: boolean;
+  readonly $xlDown?: boolean;
 };
 export const HiddenContainer = styled.div<HiddenContainerProps>`
   width: 100%;
 
-  ${({ alignCenter }) =>
-    alignCenter &&
+  ${({ $alignCenter }) =>
+    $alignCenter &&
     css`
       display: flex;
       align-items: center;
       justify-content: center;
     `}
 
-  ${({ xsUp, smDown, smUp, mdDown, mdUp, lgUp, lgDown, xlUp, xlDown }) => css`
-    ${xsUp && xsUpStyle}
+  ${({
+    $xsUp,
+    $smDown,
+    $smUp,
+    $mdDown,
+    $mdUp,
+    $lgUp,
+    $lgDown,
+    $xlUp,
+    $xlDown,
+  }) => css`
+    ${$xsUp && xsUpStyle}
 
-    ${smDown && smDownStyle}
+    ${$smDown && smDownStyle}
 
-    ${smUp && smUpStyle}
+    ${$smUp && smUpStyle}
 
-    ${mdDown && mdDownStyle}
+    ${$mdDown && mdDownStyle}
 
-    ${mdUp && mdUpStyle}
+    ${$mdUp && mdUpStyle}
 
-    ${lgUp && lgUpStyle}
+    ${$lgUp && lgUpStyle}
 
-    ${lgDown && lgDownStyle}
+    ${$lgDown && lgDownStyle}
 
-    ${xlUp && xlUpStyle}
+    ${$xlUp && xlUpStyle}
 
-    ${xlDown && xlDownStyle}
+    ${$xlDown && xlDownStyle}
   `}
 `;

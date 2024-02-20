@@ -33,16 +33,16 @@ const Hidden = ({
   xlDown,
 }: HiddenProps) => {
   const props = {
-    alignCenter,
-    xsUp,
-    smUp,
-    smDown,
-    mdUp,
-    mdDown,
-    lgUp,
-    lgDown,
-    xlUp,
-    xlDown,
+    $alignCenter: alignCenter,
+    $xsUp: xsUp,
+    $smUp: smUp,
+    $smDown: smDown,
+    $mdUp: mdUp,
+    $mdDown: mdDown,
+    $lgUp: lgUp,
+    $lgDown: lgDown,
+    $xlUp: xlUp,
+    $xlDown: xlDown,
   };
 
   return <s.HiddenContainer {...props}>{children}</s.HiddenContainer>;
