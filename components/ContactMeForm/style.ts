@@ -1,7 +1,7 @@
 import { breakpoints } from "@/utils/breakpoints";
 import styled, { css } from "styled-components";
 
-export const ContactMeFormContainer = styled.div``;
+export const ContactMeFormContainer = styled.form``;
 
 export const LabelContainer = styled.div`
   ${({ theme }) => css`
@@ -31,6 +31,7 @@ export const InlineInputWithButtonContainer = styled.div`
 
       @media (max-width: ${breakpoints.sm}) {
         width: 100%;
+        margin-top: 1rem;
       }
 
       &:disabled {
@@ -67,7 +68,8 @@ export const InputContainer = styled.div`
       color: ${theme.colors.green};
     }
 
-    input {
+    input,
+    textarea {
       margin: 0 1rem;
       padding: 0 0.7rem;
       background-color: transparent;
@@ -87,6 +89,31 @@ export const InputContainer = styled.div`
         width: 100%;
         margin: 1rem 0 1rem 1rem;
       }
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+      padding: 10px;
+      margin: 1rem;
+      line-height: 25px;
+
+      @media (max-width: ${breakpoints.sm}) {
+        width: 100%;
+        margin: 1rem 0 1rem 1rem;
+      }
+    }
+
+    .span-red-feedback-symbol {
+      color: red;
+    }
+
+    .span-green-feedback-symbol {
+      color: ${theme.colors.green};
+    }
+
+    .span-grey-feedback-symbol {
+      color: ${theme.colors.text};
     }
   `}
 `;
