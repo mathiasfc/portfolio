@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import GlitchText from "@/components/GlitchText";
+import Spinner from "@/components/icons/Spinner";
 import routes from "@/utils/routes";
 import * as s from "./style";
 
@@ -10,6 +11,7 @@ const ContactMeForm = () => {
   const [message, setMessage] = useState("");
   const [showMessageTextarea, setShowMessageTextarea] = useState(false);
   const [successfullySentMessage, setSuccessfullySentMessage] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [formErrors, setFormErrors] = useState({
     email: false,
     message: false,
@@ -57,11 +59,21 @@ const ContactMeForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (isFormValid()) {
-      console.log("Form submitted successfully:", { email, message });
-      setSuccessfullySentMessage(true);
-    } else {
-      console.error("Form submission failed:", formErrors);
+      setIsSending(true);
+      fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, message }),
+      })
+        .then(() => {
+          setIsSending(false);
+          setSuccessfullySentMessage(true);
+        })
+        .catch((error) => {
+          console.error("Error occurred while sending email:", error);
+        });
     }
   };
 
@@ -156,8 +168,8 @@ const ContactMeForm = () => {
                     onChange={handleMessageChange}
                   />
                 </s.InputContainer>
-                <button type="submit" disabled={!isFormValid()}>
-                  Send
+                <button type="submit" disabled={!isFormValid() || isSending}>
+                  {isSending ? <Spinner /> : "Send"}
                 </button>
               </s.InlineInputWithButtonContainer>
             </>
