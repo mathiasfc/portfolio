@@ -1,5 +1,5 @@
 import { breakpoints } from "@/utils/breakpoints";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const ContactMeFormContainer = styled.form``;
 
@@ -116,4 +116,46 @@ export const InputContainer = styled.div`
       color: ${theme.colors.text};
     }
   `}
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const SuccessfullySentMessageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  animation: ${fadeIn} 1s ease-in-out;
+
+  span {
+    max-width: 280px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    flex-direction: column;
+  }
+`;
+
+export const MessageContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 280px;
+
+    a {
+      width: 200px;
+      color: ${theme.colors.orange};
+
+      @media (max-width: ${breakpoints.sm}) {
+        width: 175px;
+        margin-top: 15px;
+      }
+    }
+  `};
 `;
