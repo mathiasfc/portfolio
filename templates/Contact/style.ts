@@ -1,4 +1,3 @@
-import { breakpoints } from "@/utils/breakpoints";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const InnerContactPageContent = styled.div``;
