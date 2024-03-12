@@ -1,4 +1,5 @@
 import { breakpoints } from "@/utils/breakpoints";
+import { Z_INDEX } from "@/utils/constants";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
@@ -14,7 +15,7 @@ export const HeaderContainer = styled.header`
 
   padding: 1rem;
   height: 40px;
-  z-index: 3;
+  z-index: ${Z_INDEX.medium};
 
   font-size: 0.8rem;
 
