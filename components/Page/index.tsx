@@ -46,7 +46,7 @@ const Page = ({ title, description, children }: PageProps) => {
           locale: "pt_BR",
           images: [
             {
-              url: "/logo.jpeg",
+              url: "/images/logo.jpeg",
               width: "600",
               height: "600",
               alt: "A purple puppy dog typing on a computer looking surprised on a black background, pixel art",
@@ -62,7 +62,7 @@ const Page = ({ title, description, children }: PageProps) => {
 
         {/* Additional Decorative Effects */}
         <StarsEffect />
-        <s.UniverseGlowEffect src="/glow.svg" />
+        <s.UniverseGlowEffect src="/images/glow.svg" />
       </s.PageContainer>
     </>
   );
