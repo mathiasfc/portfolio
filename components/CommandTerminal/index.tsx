@@ -67,7 +67,6 @@ const CommandTerminal = ({
           <s.CodeBlock key={index}>
             <Link
               href={routes[func]}
-              aria-role="button"
               title={buildRedirectFunctionAriaLabelText(func)}
               aria-label={buildRedirectFunctionAriaLabelText(func)}
             >

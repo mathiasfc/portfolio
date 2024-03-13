@@ -10,7 +10,7 @@ type ErrorTemplateProps = {
 
 const ErrorTemplate = ({ page404 }: ErrorTemplateProps) => {
   const pageTitle = `${
-    page404 ? "404 Not Found" : "500 Internal Server Error"
+    page404 ? "404 - Not Found" : "500 - Internal Server Error"
   } | Mathias Falci`;
 
   const page404Message = "We don't find the page that you're looking for";
