@@ -10,6 +10,7 @@ import * as s from "./style";
 type PageProps = {
   title: string;
   description: string;
+  noIndex?: boolean;
   children: ReactNode;
 };
 
@@ -17,7 +18,7 @@ type PageProps = {
  * The `Page` component serves as a layout template for your application pages.
  * It includes the SEO data, header, main content area, footer, and additional decorative effects.
  */
-const Page = ({ title, description, children }: PageProps) => {
+const Page = ({ title, description, noIndex = false, children }: PageProps) => {
   const router = useRouter();
   const [pageURL, setPageURL] = useState("");
 
@@ -37,6 +38,7 @@ const Page = ({ title, description, children }: PageProps) => {
         description={description}
         keywords={SEO_DATA.keywords}
         favicon="/favicon/favicon.ico"
+        robots={noIndex ? "noindex,nofollow" : undefined}
         openGraph={{
           type: "website",
           title: title,

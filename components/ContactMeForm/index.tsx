@@ -102,7 +102,7 @@ const ContactMeForm = () => {
       {successfullySentMessage ? (
         <s.SuccessfullySentMessageContainer>
           <Image
-            src="/successfully-sent.png"
+            src="/images/successfully-sent.png"
             width={250}
             height={250}
             alt="Picture of a puppy dog that represents an successfully message sent"
