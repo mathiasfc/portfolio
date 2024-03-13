@@ -64,7 +64,10 @@ const Page = ({ title, description, noIndex = false, children }: PageProps) => {
 
         {/* Additional Decorative Effects */}
         <StarsEffect />
-        <s.UniverseGlowEffect src="/images/glow.svg" />
+        <s.UniverseGlowEffect
+          src="/images/glow.svg"
+          alt="Glow effect fixed at the background"
+        />
       </s.PageContainer>
     </>
   );

@@ -10,6 +10,10 @@ const nextConfig = {
     EMAIL_SENDER: process.env.EMAIL_SENDER,
     EMAIL_RECEIVER: process.env.EMAIL_RECEIVER,
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = nextConfig;
