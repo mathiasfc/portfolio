@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /500
+
+# Host
+Host: https://mathiasfc.dev
+
+# Sitemaps
+Sitemap: https://mathiasfc.dev/sitemap.xml
