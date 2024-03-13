@@ -8,7 +8,11 @@ const Footer = () => {
       <s.FooterNavigation>
         <ul>
           <li>
-            <a className="a-orange" href="https://old.mathiasfc.dev">
+            <a
+              className="a-orange"
+              href="https://old.mathiasfc.dev"
+              target="_blank"
+            >
               [old-version]
             </a>
           </li>
