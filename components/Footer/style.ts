@@ -42,10 +42,10 @@ export const FooterCopyRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 180px;
+  width: 240px;
 
   @media (max-width: ${breakpoints.sm}) {
-    width: 160px;
+    width: 190px;
     margin: 0.3rem;
     margin-top: 1rem;
   }
