@@ -45,7 +45,7 @@ const Footer = () => {
         >
           <OctoCatIcon />
         </s.OctoCatLink>
-        <span>{new Date().getFullYear()}, built with</span>
+        <span>2023 - {new Date().getFullYear()}, built with</span>
         <s.HeartEmoji>❤️</s.HeartEmoji>
       </s.FooterCopyRight>
     </s.FooterContainer>
