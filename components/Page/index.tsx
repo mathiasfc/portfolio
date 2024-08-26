@@ -31,6 +31,28 @@ const Page = ({ title, description, noIndex = false, children }: PageProps) => {
     setPageURL(window?.location?.href);
   }, [router.pathname, router.query]);
 
+  useEffect(() => {
+    /**
+     * This function calculates the viewport height (vh) and sets it as a custom
+     * CSS property (--vh) on the root element. This is necessary because on mobile
+     * devices, the viewport height can change due to the dynamic browser UI (e.g.,
+     * the address bar expanding/collapsing).
+     */
+    const setViewportHeight = () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    setViewportHeight();
+    window.addEventListener("resize", setViewportHeight);
+    window.addEventListener("orientationchange", setViewportHeight);
+
+    return () => {
+      window.removeEventListener("resize", setViewportHeight);
+      window.removeEventListener("orientationchange", setViewportHeight);
+    };
+  }, []);
+
   return (
     <>
       <SEO

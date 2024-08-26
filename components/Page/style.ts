@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   position: relative;
 `;
