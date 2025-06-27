@@ -15,6 +15,7 @@ type CommandTerminalProps = {
   desktopText?: string;
   redirectFunctions?: FunctionTemplateEnum[];
   delayToShowContent?: number;
+  enableScrolling?: boolean;
   children?: ReactNode;
 };
 
@@ -38,6 +39,7 @@ const CommandTerminal = ({
   desktopText,
   redirectFunctions,
   delayToShowContent = 5800,
+  enableScrolling = false,
   children,
 }: CommandTerminalProps) => {
   const [showContent, setShowContent] = useState(false);
@@ -105,7 +107,7 @@ const CommandTerminal = ({
         </span>
       </s.CommandTerminalHeader>
 
-      <s.CommandTerminalBody>
+      <s.CommandTerminalBody enableScrolling={enableScrolling}>
         {[SizesEnum.DESKTOP, SizesEnum.MOBILE].map((size, index) => {
           if (size === SizesEnum.DESKTOP) {
             return (

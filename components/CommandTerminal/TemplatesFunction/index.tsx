@@ -35,7 +35,7 @@ const desktopPortfolioFn = (
       (
       <span className="span-code-orange">
         <i>
-          <GlitchText text="latestWorks " />
+          <GlitchText text="latestWorks" />
         </i>
       </span>
       ){" {"}

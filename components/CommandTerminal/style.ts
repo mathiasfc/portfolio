@@ -40,7 +40,7 @@ export const CommandTerminalHeader = styled.header`
   `}
 `;
 
-export const CommandTerminalBody = styled.div`
+export const CommandTerminalBody = styled.div<{ enableScrolling?: boolean }>`
   background-color: #0c162d;
   padding: 1.5rem;
   border-bottom-left-radius: 0.575rem;
@@ -49,9 +49,34 @@ export const CommandTerminalBody = styled.div`
   max-height: 300px;
   overflow-y: scroll;
 
+  /* Custom scrollbar styling for terminal aesthetic */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(21, 32, 43, 0.3);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 255, 0.4);
+    border-radius: 4px;
+
+    &:hover {
+      background: rgba(0, 255, 255, 0.6);
+    }
+  }
+
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 255, 0.4) rgba(21, 32, 43, 0.3);
+
   @media (min-width: ${breakpoints.lg}) {
     min-height: 380px;
-    overflow: hidden;
+    max-height: ${({ enableScrolling }) =>
+      enableScrolling ? "500px" : "none"};
+    overflow: ${({ enableScrolling }) => (enableScrolling ? "auto" : "hidden")};
   }
 `;
 

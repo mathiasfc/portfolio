@@ -15,6 +15,7 @@ const HomeTemplate = () => {
         desktopText={`// Hi there! I'm Mathias, \n // building the web one line at a time`}
         redirectFunctions={[
           FunctionTemplateEnum.CONTACT_ME,
+          FunctionTemplateEnum.PORTFOLIO,
           FunctionTemplateEnum.SOCIAL_NETWORKS,
         ]}
       />

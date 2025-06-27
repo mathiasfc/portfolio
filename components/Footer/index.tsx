@@ -27,11 +27,11 @@ const Footer = () => {
           </li>
           <li>
             <a
-              className="a-purple"
-              href="https://giphy.com/search/dog"
+              className="a-pink"
+              href="https://github.com/mathiasfc"
               target="_blank"
             >
-              [puppy-paradise]
+              [github]
             </a>
           </li>
         </ul>

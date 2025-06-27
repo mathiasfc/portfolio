@@ -49,13 +49,12 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <a
-              className="a-pink"
-              href="https://github.com/mathiasfc"
-              target="_blank"
+            <Link
+              className={headerClassNameBuilder("a-pink", routes.portfolio)}
+              href={routes.portfolio}
             >
-              [github]
-            </a>
+              [portfolio]
+            </Link>
           </li>
         </ul>
       </s.HeaderNavigation>
