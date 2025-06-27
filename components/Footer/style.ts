@@ -8,7 +8,9 @@ export const FooterContainer = styled.footer`
   margin-left: auto;
 
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 0 1rem;
   height: 40px;
 

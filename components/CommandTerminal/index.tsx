@@ -111,7 +111,7 @@ const CommandTerminal = ({
         {[SizesEnum.DESKTOP, SizesEnum.MOBILE].map((size, index) => {
           if (size === SizesEnum.DESKTOP) {
             return (
-              <Hidden xlDown key={index}>
+              <Hidden lgDown key={index}>
                 <TypingAnimation text={desktopText || mobileText} />
 
                 {showRedirectFunctionsCondition &&
@@ -120,7 +120,7 @@ const CommandTerminal = ({
             );
           } else if (size === SizesEnum.MOBILE) {
             return (
-              <Hidden xlUp key={index}>
+              <Hidden lgUp key={index}>
                 <TypingAnimation text={mobileText} />
 
                 {showRedirectFunctionsCondition &&

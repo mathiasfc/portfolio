@@ -2,7 +2,6 @@ import React, { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
-import StarsEffect from "@/components/StarsEffect";
 import Footer from "@/components/Footer";
 import { SEO_DATA } from "@/utils/constants";
 import * as s from "./style";
@@ -15,43 +14,23 @@ type PageProps = {
 };
 
 /**
- * The `Page` component serves as a layout template for your application pages.
- * It includes the SEO data, header, main content area, footer, and additional decorative effects.
+ * Page component that serves as a layout wrapper for all pages.
+ * It includes common elements like SEO meta tags, header, and footer.
  */
-const Page = ({ title, description, noIndex = false, children }: PageProps) => {
+const Page = ({ title, description, noIndex, children }: PageProps) => {
+  const [pageURL, setPageURL] = useState<string>("");
   const router = useRouter();
-  const [pageURL, setPageURL] = useState("");
 
   useEffect(() => {
     /**
-     * Every time we have a change in our route, we update the pageURL used for SEO.
-     * We also listen for the query params, as we have dynamic routes such as products
-     * and tags which uses the same path, but changes the query params.
+     * Sets the current page URL for SEO purposes.
      */
-    setPageURL(window?.location?.href);
-  }, [router.pathname, router.query]);
-
-  useEffect(() => {
-    /**
-     * This function calculates the viewport height (vh) and sets it as a custom
-     * CSS property (--vh) on the root element. This is necessary because on mobile
-     * devices, the viewport height can change due to the dynamic browser UI (e.g.,
-     * the address bar expanding/collapsing).
-     */
-    const setViewportHeight = () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-
-    setViewportHeight();
-    window.addEventListener("resize", setViewportHeight);
-    window.addEventListener("orientationchange", setViewportHeight);
-
-    return () => {
-      window.removeEventListener("resize", setViewportHeight);
-      window.removeEventListener("orientationchange", setViewportHeight);
-    };
-  }, []);
+    const currentURL =
+      typeof window !== "undefined"
+        ? `${window.location.origin}${router.asPath}`
+        : "";
+    setPageURL(currentURL);
+  }, [router.asPath]);
 
   return (
     <>
@@ -83,13 +62,6 @@ const Page = ({ title, description, noIndex = false, children }: PageProps) => {
         <Header />
         <s.Main>{children}</s.Main>
         <Footer />
-
-        {/* Additional Decorative Effects */}
-        <StarsEffect />
-        <s.UniverseGlowEffect
-          src="/images/glow.svg"
-          alt="Glow effect fixed at the background"
-        />
       </s.PageContainer>
     </>
   );

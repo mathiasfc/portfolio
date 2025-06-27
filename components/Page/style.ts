@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
-  padding: 0 1rem;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  /* height: 100vh; */
-  min-height: calc(var(--vh, 1vh) * 100);
-  overflow: hidden;
   position: relative;
+  min-height: 100vh;
+  z-index: 1;
+  padding: 1rem;
+  width: 100%;
 `;
 
 export const Main = styled.main`
@@ -24,16 +23,4 @@ export const Main = styled.main`
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-`;
-
-export const UniverseGlowEffect = styled.img`
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  transform: translate(-50%, -50%) scaleX(-1);
-  pointer-events: none;
-  overflow: hidden;
-  position: absolute;
-  border-style: none;
-  z-index: -1;
 `;
