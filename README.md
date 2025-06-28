@@ -25,7 +25,7 @@ This portfolio project serves as a central hub to display my work, skills, and e
 
 ## Features
 
-- [Todo] Showcase of projects with descriptions and links
+- Showcase of projects with descriptions and links
 - Own glitch text effect component
 - Social media section
 - Contact information for potential collaboration or inquiries
