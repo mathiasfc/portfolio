@@ -7,7 +7,7 @@ export const projects = [
     image: "/images/portfolio/crypto-alert.png",
     liveUrl: "https://crypto-alert-demo.vercel.app",
     repoUrl: "https://github.com/mathiasfc/crypto-alert",
-    tech: ["React", "Node.js", "CoinGecko API", "WebSocket"],
+    tech: ["Python", "Telegram API", "CoinMarketCap API"],
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const projects = [
     image: "/images/portfolio/vem-adotar.png",
     liveUrl: "https://vemadotar.com.br",
     repoUrl: "https://github.com/mathiasfc/vem-adotar",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    tech: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB"],
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const projects = [
     image: "/images/portfolio/portfolio.png",
     liveUrl: "https://mathiasfc.dev",
     repoUrl: "https://github.com/mathiasfc/portfolio",
-    tech: ["Next.js", "TypeScript", "Styled Components", "React"],
+    tech: ["React", "Next.js", "TypeScript", "Styled Components"],
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const projects = [
     image: "/images/portfolio/resume-pra-mim.png",
     liveUrl: "https://resumepramim.com.br",
     repoUrl: "https://github.com/mathiasfc/resume-pra-mim",
-    tech: ["Vue.js", "Express.js", "MongoDB", "PDF.js"],
+    tech: ["Next.js", "TypeScript", "Stripe", "Prisma", "Tailwind"],
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const projects = [
     image: "/images/portfolio/ceu-de-dentro.png",
     liveUrl: "https://ceudedentro.com.br",
     repoUrl: "https://github.com/mathiasfc/ceu-de-dentro",
-    tech: ["React", "Firebase", "Stripe", "Material-UI"],
+    tech: ["React", "Next.js", "TypeScript", "Tailwind"],
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const projects = [
     image: "/images/portfolio/dobro.png",
     liveUrl: "https://dobro.com.br",
     repoUrl: "https://github.com/mathiasfc/dobro",
-    tech: ["Angular", "Node.js", "PostgreSQL", "Chart.js"],
+    tech: ["GraphQL", "Apollo", "Next.js", "TypeScript", "Node.js", "MongoDB"],
   },
   {
     id: 7,

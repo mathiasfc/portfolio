@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../utils/breakpoints";
 
 export const Card = styled.div`
   background: linear-gradient(
@@ -46,7 +47,7 @@ export const ImageContainer = styled.div`
   );
   flex-shrink: 0; /* Prevent shrinking */
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.xl}) {
     height: 160px; /* Smaller image area on mobile */
   }
 
@@ -111,7 +112,7 @@ export const Content = styled.div`
   flex: 1; /* Fill remaining space */
   min-height: 0; /* Allow shrinking if needed */
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.xl}) {
     padding: 20px;
     gap: 14px;
   }
@@ -136,6 +137,10 @@ export const Title = styled.h3`
     color: #ff6b6b;
     font-weight: normal;
   }
+
+  @media (max-width: ${breakpoints.xl}) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const Description = styled.p`
@@ -145,6 +150,11 @@ export const Description = styled.p`
   margin: 0;
   opacity: 0.9;
   flex-grow: 1;
+
+  @media (max-width: ${breakpoints.xl}) {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
 `;
 
 export const TechStack = styled.div`
@@ -166,6 +176,11 @@ export const TechTag = styled.span`
   font-family: "Courier New", monospace;
   border: 1px solid rgba(0, 255, 255, 0.2);
   font-weight: 500;
+
+  @media (max-width: ${breakpoints.xl}) {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+  }
 `;
 
 export const Actions = styled.div`
@@ -196,6 +211,12 @@ export const ActionButton = styled.a`
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+
+  @media (max-width: ${breakpoints.xl}) {
+    padding: 10px 12px;
+    font-size: 0.75rem;
+    gap: 6px;
+  }
 
   &::before {
     content: "";

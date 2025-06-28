@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../utils/breakpoints";
 
 export const CarouselContainer = styled.div`
   position: relative;
@@ -32,43 +33,30 @@ export const CarouselInner = styled.div`
   display: flex;
   gap: 30px;
   padding: 20px 0;
-  margin-left: -20px;
+  margin: 0px 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.sm}) {
     gap: 20px;
-    margin-left: -10px;
   }
 `;
 
 export const CarouselSlide = styled.div`
   flex: 0 0 auto;
   min-width: 0;
-  padding-left: 20px;
 
-  @media (max-width: 768px) {
-    padding-left: 10px;
-  }
-
-  /* Ensure project cards maintain their width and consistent height */
   > div {
     width: 350px;
     max-width: 90vw;
-    height: 550px; /* Fixed height for consistency */
-  }
+    height: 480px;
 
-  @media (max-width: 768px) {
-    > div {
-      width: 300px;
-      max-width: 85vw;
-      height: 480px; /* Reduced height for mobile */
-    }
-  }
-
-  @media (max-width: 480px) {
-    > div {
+    @media (max-width: ${breakpoints.sm}) {
       width: 280px;
       max-width: 80vw;
-      height: 450px; /* Even smaller for small screens */
+      height: 450px;
+    }
+
+    @media (min-width: ${breakpoints.xl}) {
+      height: 550px;
     }
   }
 `;

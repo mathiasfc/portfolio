@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
@@ -10,7 +10,7 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ children, containerVariants }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     {
       align: "center",
       containScroll: "trimSnaps",
@@ -22,14 +22,6 @@ const Carousel: React.FC<CarouselProps> = ({ children, containerVariants }) => {
       }),
     ]
   );
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
 
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible">

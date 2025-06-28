@@ -52,8 +52,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variants }) => {
               rel="noopener noreferrer"
               title={`Visit ${project.title} live site`}
             >
-              <s.ButtonIcon>🔗</s.ButtonIcon>
-              Live Demo
+              <s.ButtonIcon>🟢</s.ButtonIcon>
+              Live
             </s.ActionButton>
             <s.ActionButton
               href={project.repoUrl}
@@ -62,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variants }) => {
               title={`View ${project.title} source code`}
             >
               <s.ButtonIcon>💻</s.ButtonIcon>
-              Source Code
+              Source
             </s.ActionButton>
           </s.Actions>
         </s.Content>
