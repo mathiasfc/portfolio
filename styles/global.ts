@@ -65,6 +65,11 @@ const redirectLinks = css`
         background-color: ${theme.colors.pink};
       }
     }
+
+    .a-pink.active-style {
+      color: ${theme.colors.black};
+      background-color: ${theme.colors.pink};
+    }
   `}
 `;
 

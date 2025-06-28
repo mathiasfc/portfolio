@@ -1,7 +1,6 @@
 import Page from "@/components/Page";
 import ProjectCard from "@/components/ProjectCard";
-import { motion } from "framer-motion";
-import * as s from "./style";
+import Carousel from "@/components/Carousel";
 import { projects } from "@/utils/projects";
 
 // Simple animation variants
@@ -39,21 +38,15 @@ const PortfolioTemplate = () => {
 
   return (
     <Page title={pageTitle} description={pageDescription}>
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <s.ProjectsColumn>
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              variants={projectVariants}
-            />
-          ))}
-        </s.ProjectsColumn>
-      </motion.div>
+      <Carousel containerVariants={containerVariants}>
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            variants={projectVariants}
+          />
+        ))}
+      </Carousel>
     </Page>
   );
 };

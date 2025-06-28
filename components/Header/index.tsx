@@ -11,6 +11,7 @@ const Header = () => {
     let className = defaultClass;
 
     if (router.pathname === route) {
+      console.log(router.pathname, route);
       className += ` active-style`;
     }
 

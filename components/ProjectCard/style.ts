@@ -11,15 +11,11 @@ export const Card = styled.div`
   padding: 0;
   backdrop-filter: blur(15px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 255, 255, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   position: relative;
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(0, 255, 255, 0.4);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 255, 255, 0.2);
-  }
+  height: 100%; /* Ensure full height usage */
+  display: flex;
+  flex-direction: column;
 
   &::before {
     content: "";
@@ -35,11 +31,6 @@ export const Card = styled.div`
       transparent
     );
     opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover::before {
-    opacity: 1;
   }
 `;
 
@@ -53,17 +44,21 @@ export const ImageContainer = styled.div`
     rgba(21, 32, 43, 0.8),
     rgba(13, 17, 23, 0.9)
   );
+  flex-shrink: 0; /* Prevent shrinking */
+
+  @media (max-width: 768px) {
+    height: 160px; /* Smaller image area on mobile */
+  }
+
+  @media (max-width: 480px) {
+    height: 140px; /* Even smaller for small screens */
+  }
 `;
 
 export const ProjectImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-
-  ${Card}:hover & {
-    transform: scale(1.05);
-  }
 `;
 
 export const ImagePlaceholder = styled.div`
@@ -113,7 +108,18 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: calc(100% - 200px);
+  flex: 1; /* Fill remaining space */
+  min-height: 0; /* Allow shrinking if needed */
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+    gap: 12px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -160,17 +166,6 @@ export const TechTag = styled.span`
   font-family: "Courier New", monospace;
   border: 1px solid rgba(0, 255, 255, 0.2);
   font-weight: 500;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 255, 255, 0.25),
-      rgba(0, 255, 255, 0.1)
-    );
-    border-color: rgba(0, 255, 255, 0.4);
-    transform: translateY(-1px);
-  }
 `;
 
 export const Actions = styled.div`
