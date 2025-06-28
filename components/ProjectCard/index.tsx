@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import * as s from "./style";
+import { breakpoints } from "../../utils/breakpoints";
 
 interface Project {
   id: number;
@@ -15,11 +16,39 @@ interface Project {
 interface ProjectCardProps {
   project: Project;
   variants?: any;
+  index?: number;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, variants }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  project,
+  variants,
+  index = 0,
+}) => {
+  const initialState = (() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth < parseInt(breakpoints.sm) && index < 2
+        ? "visible"
+        : "hidden";
+    }
+    // Default for SSR
+    return "hidden";
+  })();
+
   return (
-    <motion.div variants={variants}>
+    <motion.div
+      variants={variants}
+      initial={initialState}
+      whileInView="visible"
+      viewport={{
+        once: false, // Allow re-animation when scrolling back
+        amount: 0,
+      }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+        delay: index * 0.1, // Staggered delay based on index
+      }}
+    >
       <s.Card>
         <s.ImageContainer>
           {project.image ? (
@@ -46,24 +75,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variants }) => {
           </s.TechStack>
 
           <s.Actions>
-            <s.ActionButton
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={`Visit ${project.title} live site`}
-            >
-              <s.ButtonIcon>🟢</s.ButtonIcon>
-              Live
-            </s.ActionButton>
-            <s.ActionButton
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={`View ${project.title} source code`}
-            >
-              <s.ButtonIcon>💻</s.ButtonIcon>
-              Source
-            </s.ActionButton>
+            {project.liveUrl && (
+              <s.ActionButton
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Visit ${project.title} live site`}
+              >
+                <s.ButtonIcon>🟢</s.ButtonIcon>
+                Live
+              </s.ActionButton>
+            )}
+            {project.repoUrl && (
+              <s.ActionButton
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`View ${project.title} source code`}
+              >
+                <s.ButtonIcon>💻</s.ButtonIcon>
+                Source
+              </s.ActionButton>
+            )}
           </s.Actions>
         </s.Content>
       </s.Card>

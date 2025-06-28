@@ -14,7 +14,7 @@ export const Card = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
-  height: 100%; /* Ensure full height usage */
+  height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -45,14 +45,14 @@ export const ImageContainer = styled.div`
     rgba(21, 32, 43, 0.8),
     rgba(13, 17, 23, 0.9)
   );
-  flex-shrink: 0; /* Prevent shrinking */
+  flex-shrink: 0;
 
   @media (max-width: ${breakpoints.xl}) {
-    height: 160px; /* Smaller image area on mobile */
+    height: 160px;
   }
 
   @media (max-width: 480px) {
-    height: 140px; /* Even smaller for small screens */
+    height: 140px;
   }
 `;
 
@@ -60,6 +60,7 @@ export const ProjectImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(1) sepia(1) hue-rotate(280deg) saturate(2) brightness(0.8);
 `;
 
 export const ImagePlaceholder = styled.div`
@@ -109,8 +110,8 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  flex: 1; /* Fill remaining space */
-  min-height: 0; /* Allow shrinking if needed */
+  flex: 1;
+  min-height: 0;
 
   @media (max-width: ${breakpoints.xl}) {
     padding: 20px;
@@ -211,6 +212,7 @@ export const ActionButton = styled.a`
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  max-width: 130px;
 
   @media (max-width: ${breakpoints.xl}) {
     padding: 10px 12px;
