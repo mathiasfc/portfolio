@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const initialState = (() => {
     if (typeof window !== "undefined") {
-      return window.innerWidth < parseInt(breakpoints.sm) && index < 2
+      return window.innerWidth < parseInt(breakpoints.sm)
         ? "visible"
         : "hidden";
     }
